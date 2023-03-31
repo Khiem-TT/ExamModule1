@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ex02</title>
+</head>
+<body>
+<script>
+    function deleteNumberFromArray(array, index) {
+        if (index < 0 || index >= array.length) {
+            return array;
+        } else {
+            let newArray = [];
+            for (let i = 0; i < array.length; i++) {
+                if (i === index) {
+                    continue;
+                }
+                newArray.push(arr[i]);
+            }
+            return newArray;
+        }
+    }
+
+    let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    let index1 = 3;
+    console.log(deleteNumberFromArray(arr, index1));
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ex04</title>
+</head>
+<body>
+<canvas id="canvas" width="500" height="500" style="border: solid 5px blue"></canvas>
+<script>
+    class Circle {
+        x;
+        y;
+        radius;
+        color;
+
+        constructor(x, y, radius, color) {
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+            this.color = color;
+        }
+
+        render(id) {
+            let canvas = document.getElementById(id);
+            let ctx = canvas.getContext('2d');
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+        }
+    }
+
+    let circle = new Circle(250, 250, 100, 'green');
+    circle.render('canvas');
+</script>
+</body>
+</html>
